@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>La Boulangerie du Coin</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Radley&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #bc7658;
+        --text: #ffffff;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Radley", serif;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "Alex Brush", cursive;
+        color: var(--text);
+        margin-top: 0;
+      }
+
+      p,
+      a,
+      label,
+      input,
+      textarea,
+      button {
+        font-family: "Radley", serif;
+        color: var(--text);
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      .container {
+        width: min(1200px, 92%);
+        margin: 0 auto;
+      }
+
+      .section {
+        padding: 80px 0;
+      }
+
+      .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: #bc7658;
+        z-index: 1000;
+      }
+
+      .header-inner {
+        min-height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .logo img {
+        width: 140px;
+        height: auto;
+      }
+
+      .menu {
+        display: flex;
+        gap: 20px;
+      }
+
+      .menu a {
+        text-decoration: none;
+      }
+
+      .hero {
+        position: relative;
+        margin-top: 70px;
+        min-height: calc(100vh - 70px);
+      }
+
+      .hero > img {
+        width: 100%;
+        height: calc(100vh - 70px);
+        object-fit: cover;
+      }
+
+      .hero-content {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: clamp(40px, 6vw, 78px);
+        margin: 0;
+      }
+
+      .btn {
+        border: 1px solid #ffffff;
+        background: #bc7658;
+        padding: 10px 22px;
+        cursor: pointer;
+        transition: opacity 0.25s ease;
+      }
+
+      .btn:hover {
+        opacity: 0.85;
+      }
+
+      .histoire {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        align-items: center;
+      }
+
+      .histoire-image img {
+        width: 100%;
+      }
+
+      .histoire-texte h2 {
+        font-size: clamp(34px, 5vw, 58px);
+        margin-bottom: 14px;
+      }
+
+      .savoir-grid,
+      .actualites-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+
+      .card {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .card img {
+        width: 100%;
+      }
+
+      .card h3 {
+        font-size: clamp(28px, 4vw, 44px);
+        margin: 0;
+      }
+
+      .contact-form {
+        max-width: 700px;
+        display: grid;
+        gap: 12px;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        background: #bc7658;
+        border: 1px solid #ffffff;
+        padding: 12px;
+      }
+
+      .footer {
+        text-align: center;
+        padding: 24px 0;
+      }
+
+      .fade-in {
+        opacity: 0;
+        transform: translateY(18px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @media (max-width: 900px) {
+        .histoire {
+          grid-template-columns: 1fr;
+        }
+
+        .savoir-grid,
+        .actualites-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .header-inner {
+          flex-direction: column;
+          padding: 12px 0;
+        }
+
+        .hero {
+          margin-top: 122px;
+          min-height: calc(100vh - 122px);
+        }
+
+        .hero > img {
+          height: calc(100vh - 122px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header-inner">
+        <a class="logo" href="#accueil">
+          <img src="/images/logo.jpg" alt="" />
+        </a>
+        <nav class="menu">
+          <a href="#accueil">Accueil</a>
+          <a href="#histoire">Histoire</a>
+          <a href="#savoir-faire">Savoir-faire</a>
+          <a href="#actualites">Actualités</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="accueil">
+      <section class="hero fade-in">
+        <img src="/images/hero.jpg" alt="" />
+        <div class="hero-content">
+          <h1>Titre principal</h1>
+          <button class="btn" type="button">Découvrir</button>
+        </div>
+      </section>
+
+      <section id="histoire" class="section fade-in">
+        <div class="container">
+          <div class="histoire">
+            <div class="histoire-image">
+              <img src="/images/histoire.jpg" alt="" />
+            </div>
+            <div class="histoire-texte">
+              <h2>Titre</h2>
+              <p>Texte</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="savoir-faire" class="section fade-in">
+        <div class="container">
+          <h2>Savoir-faire</h2>
+          <div class="savoir-grid">
+            <div class="card">
+              <img src="/images/savoir1.jpg" alt="" />
+              <h3>Titre</h3>
+              <p>Texte</p>
+            </div>
+            <div class="card">
+              <img src="/images/savoir2.jpg" alt="" />
+              <h3>Titre</h3>
+              <p>Texte</p>
+            </div>
+            <div class="card">
+              <img src="/images/savoir3.jpg" alt="" />
+              <h3>Titre</h3>
+              <p>Texte</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="actualites" class="section fade-in">
+        <div class="container">
+          <h2>Actualités</h2>
+          <div class="actualites-grid">
+            <div class="card">
+              <img src="/images/actualite1.jpg" alt="" />
+              <h3>Titre</h3>
+              <p>Texte</p>
+            </div>
+            <div class="card">
+              <img src="/images/actualite2.jpg" alt="" />
+              <h3>Titre</h3>
+              <p>Texte</p>
+            </div>
+            <div class="card">
+              <img src="/images/actualite3.jpg" alt="" />
+              <h3>Titre</h3>
+              <p>Texte</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section fade-in">
+        <div class="container">
+          <h2>Contact</h2>
+          <form class="contact-form" action="#" method="post">
+            <label for="nom">Nom</label>
+            <input id="nom" name="nom" type="text" required />
+
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required />
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button class="btn" type="submit">Envoyer</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Texte centré simple</p>
+    </footer>
+
+    <script>
+      const elements = document.querySelectorAll(".fade-in");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15 }
+      );
+      elements.forEach((element) => observer.observe(element));
+    </script>
+  </body>
+</html>
