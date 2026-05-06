@@ -76,6 +76,19 @@ p {
   gap: 1rem;
 }
 
+.nav__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav__logo {
+  width: 34px;
+  height: 34px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
 .nav a {
   color: var(--text);
   text-decoration: none;
@@ -210,8 +223,9 @@ p {
 
 .news__cards {
   display: grid;
-  grid-template-columns: repeat(3, minmax(180px, 1fr));
-  gap: 1.3rem;
+  grid-template-columns: repeat(3, minmax(200px, 250px));
+  justify-content: center;
+  gap: 1rem;
 }
 
 .news-card {
@@ -372,6 +386,11 @@ p {
     flex-direction: column;
     justify-content: center;
     padding: 0.35rem 0;
+  }
+
+  .nav__logo {
+    width: 28px;
+    height: 28px;
   }
 
   .nav__links {
