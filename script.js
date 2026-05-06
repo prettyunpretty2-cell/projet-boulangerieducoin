@@ -1,32 +1,33 @@
-const menuToggle = document.querySelector(".menu-toggle");
-const siteNav = document.querySelector(".site-nav");
-const navLinks = document.querySelectorAll(".site-nav a");
+const revealElements = document.querySelectorAll('.reveal');
 
-if (menuToggle && siteNav) {
-  menuToggle.addEventListener("click", () => {
-    siteNav.classList.toggle("open");
-  });
-
-  navLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      siteNav.classList.remove("open");
-    });
-  });
-}
-
-const revealElements = document.querySelectorAll(".reveal");
-
-const revealObserver = new IntersectionObserver(
+const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
-      if (!entry.isIntersecting) {
-        return;
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
       }
-      entry.target.classList.add("visible");
-      revealObserver.unobserve(entry.target);
     });
   },
-  { threshold: 0.16 }
+  { threshold: 0.18 }
 );
 
-revealElements.forEach((element) => revealObserver.observe(element));
+revealElements.forEach((element) => observer.observe(element));
+
+const form = document.querySelector('.contact__form');
+
+if (form) {
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const button = form.querySelector('button[type="submit"]');
+    const initial = button.textContent;
+    button.textContent = 'Message envoye';
+    button.disabled = true;
+
+    setTimeout(() => {
+      form.reset();
+      button.textContent = initial;
+      button.disabled = false;
+    }, 1500);
+  });
+}

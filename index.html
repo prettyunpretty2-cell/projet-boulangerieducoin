@@ -4,350 +4,157 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>La Boulangerie du Coin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Radley&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Radley:ital@0;1&display=swap"
       rel="stylesheet"
     />
-    <style>
-      :root {
-        --bg: #bc7658;
-        --text: #ffffff;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      html {
-        scroll-behavior: smooth;
-      }
-
-      body {
-        margin: 0;
-        background: var(--bg);
-        color: var(--text);
-        font-family: "Radley", serif;
-      }
-
-      h1,
-      h2,
-      h3 {
-        font-family: "Alex Brush", cursive;
-        color: var(--text);
-        margin-top: 0;
-      }
-
-      p,
-      a,
-      label,
-      input,
-      textarea,
-      button {
-        font-family: "Radley", serif;
-        color: var(--text);
-      }
-
-      img {
-        max-width: 100%;
-        display: block;
-      }
-
-      .container {
-        width: min(1200px, 92%);
-        margin: 0 auto;
-      }
-
-      .section {
-        padding: 80px 0;
-      }
-
-      .header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background: #bc7658;
-        z-index: 1000;
-      }
-
-      .header-inner {
-        min-height: 70px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 20px;
-      }
-
-      .logo img {
-        width: 140px;
-        height: auto;
-      }
-
-      .menu {
-        display: flex;
-        gap: 20px;
-      }
-
-      .menu a {
-        text-decoration: none;
-      }
-
-      .hero {
-        position: relative;
-        margin-top: 70px;
-        min-height: calc(100vh - 70px);
-      }
-
-      .hero > img {
-        width: 100%;
-        height: calc(100vh - 70px);
-        object-fit: cover;
-      }
-
-      .hero-content {
-        position: absolute;
-        inset: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 20px;
-        text-align: center;
-      }
-
-      .hero h1 {
-        font-size: clamp(40px, 6vw, 78px);
-        margin: 0;
-      }
-
-      .btn {
-        border: 1px solid #ffffff;
-        background: #bc7658;
-        padding: 10px 22px;
-        cursor: pointer;
-        transition: opacity 0.25s ease;
-      }
-
-      .btn:hover {
-        opacity: 0.85;
-      }
-
-      .histoire {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 30px;
-        align-items: center;
-      }
-
-      .histoire-image img {
-        width: 100%;
-      }
-
-      .histoire-texte h2 {
-        font-size: clamp(34px, 5vw, 58px);
-        margin-bottom: 14px;
-      }
-
-      .savoir-grid,
-      .actualites-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-      }
-
-      .card {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-      }
-
-      .card img {
-        width: 100%;
-      }
-
-      .card h3 {
-        font-size: clamp(28px, 4vw, 44px);
-        margin: 0;
-      }
-
-      .contact-form {
-        max-width: 700px;
-        display: grid;
-        gap: 12px;
-      }
-
-      .contact-form input,
-      .contact-form textarea {
-        width: 100%;
-        background: #bc7658;
-        border: 1px solid #ffffff;
-        padding: 12px;
-      }
-
-      .footer {
-        text-align: center;
-        padding: 24px 0;
-      }
-
-      .fade-in {
-        opacity: 0;
-        transform: translateY(18px);
-        transition: opacity 0.6s ease, transform 0.6s ease;
-      }
-
-      .fade-in.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      @media (max-width: 900px) {
-        .histoire {
-          grid-template-columns: 1fr;
-        }
-
-        .savoir-grid,
-        .actualites-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .header-inner {
-          flex-direction: column;
-          padding: 12px 0;
-        }
-
-        .hero {
-          margin-top: 122px;
-          min-height: calc(100vh - 122px);
-        }
-
-        .hero > img {
-          height: calc(100vh - 122px);
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="header">
-      <div class="container header-inner">
-        <a class="logo" href="#accueil">
-          <img src="/images/logo.jpg" alt="" />
-        </a>
-        <nav class="menu">
-          <a href="#accueil">Accueil</a>
-          <a href="#histoire">Histoire</a>
-          <a href="#savoir-faire">Savoir-faire</a>
-          <a href="#actualites">Actualités</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </div>
+      <nav class="nav container">
+        <a href="#hero" class="nav__logo">Accueil</a>
+        <div class="nav__links">
+          <a href="#histoire">Qui sommes-nous ?</a>
+          <a href="#savoir-faire">Nos produits phares</a>
+          <a href="#contact">Nous contacter</a>
+        </div>
+      </nav>
     </header>
 
-    <main id="accueil">
-      <section class="hero fade-in">
-        <img src="/images/hero.jpg" alt="" />
-        <div class="hero-content">
-          <h1>Titre principal</h1>
-          <button class="btn" type="button">Découvrir</button>
+    <main>
+      <section id="hero" class="hero reveal">
+        <img
+          src="assets/AdobeStock_1796928617 1.png"
+          alt="Pains artisanaux sur tissu brun"
+          class="hero__bg"
+        />
+        <div class="hero__overlay"></div>
+        <div class="hero__content container">
+          <h1>La Boulangerie<br />du Coin</h1>
+          <a href="#contact" class="btn btn--hero">Commander</a>
         </div>
       </section>
 
-      <section id="histoire" class="section fade-in">
+      <section id="histoire" class="about section section--pattern reveal">
         <div class="container">
-          <div class="histoire">
-            <div class="histoire-image">
-              <img src="/images/histoire.jpg" alt="" />
+          <h2>Qui sommes-nous ?</h2>
+          <div class="about__layout">
+            <div class="about__text">
+              <p>
+                Dans notre boulangerie artisanale, chaque pain et chaque viennoiserie est
+                façonné avec passion. Avec nous, c'est tout un savoir-faire traditionnel qui
+                s'exprime à travers des ingrédients soigneusement sélectionnés et des gestes
+                authentiques.
+              </p>
+              <p>
+                Nous mettons tout notre coeur dans chaque fournée afin d'offrir des créations
+                qui ont le vrai goût du fait maison.
+              </p>
+              <p>Poussez nos portes : entrez dans un univers gourmand et partagez notre passion.</p>
             </div>
-            <div class="histoire-texte">
-              <h2>Titre</h2>
-              <p>Texte</p>
+            <div class="about__images">
+              <img src="assets/image 4.png" alt="Oeuf versé sur de la farine" />
+              <img src="assets/image 3.png" alt="Farine en suspension au-dessus de la pâte" />
             </div>
           </div>
         </div>
       </section>
 
-      <section id="savoir-faire" class="section fade-in">
+      <section id="savoir-faire" class="craft section section--pattern reveal">
+        <div class="container cards-grid">
+          <article class="craft-card">
+            <img src="assets/image 8.png" alt="Boulanger en préparation" />
+            <h3>Maxime</h3>
+          </article>
+          <article class="craft-card">
+            <img src="assets/image 5.png" alt="Boulanger devant un four" />
+            <h3>Mathieu</h3>
+          </article>
+          <article class="craft-card">
+            <img src="assets/image 6.png" alt="Artisan enfournant des baguettes" />
+            <h3>Claire</h3>
+          </article>
+          <article class="craft-card">
+            <img src="assets/image 7.png" alt="Pâtissier au travail" />
+            <h3>Fred</h3>
+          </article>
+        </div>
+      </section>
+
+      <section id="actualites" class="news section section--shop reveal">
         <div class="container">
-          <h2>Savoir-faire</h2>
-          <div class="savoir-grid">
-            <div class="card">
-              <img src="/images/savoir1.jpg" alt="" />
-              <h3>Titre</h3>
-              <p>Texte</p>
-            </div>
-            <div class="card">
-              <img src="/images/savoir2.jpg" alt="" />
-              <h3>Titre</h3>
-              <p>Texte</p>
-            </div>
-            <div class="card">
-              <img src="/images/savoir3.jpg" alt="" />
-              <h3>Titre</h3>
-              <p>Texte</p>
-            </div>
+          <h2>Nos produits phares</h2>
+          <div class="news__cards">
+            <article class="news-card">
+              <img src="assets/image 1.png" alt="Pain au levain traditionnel" />
+              <div class="news-card__content">
+                <h3>Pain au levain<br />traditionnel</h3>
+                <button aria-label="Voir les détails du pain au levain">i</button>
+              </div>
+            </article>
+            <article class="news-card">
+              <img src="assets/AdobeStock_1639722384 1.png" alt="Croissant pur beurre" />
+              <div class="news-card__content">
+                <h3>Notre Croissant<br />pur beurre</h3>
+                <button aria-label="Voir les détails du croissant">i</button>
+              </div>
+            </article>
+            <article class="news-card">
+              <img src="assets/Rectangle 156.png" alt="Feuilleté aux amandes" />
+              <div class="news-card__content">
+                <h3>Notre feuilleté<br />aux amandes</h3>
+                <button aria-label="Voir les détails du feuilleté">i</button>
+              </div>
+            </article>
           </div>
         </div>
       </section>
 
-      <section id="actualites" class="section fade-in">
-        <div class="container">
-          <h2>Actualités</h2>
-          <div class="actualites-grid">
-            <div class="card">
-              <img src="/images/actualite1.jpg" alt="" />
-              <h3>Titre</h3>
-              <p>Texte</p>
+      <section id="contact" class="contact section reveal">
+        <img
+          src="assets/Gemini_Generated_Image_c89en2c89en2c89e 1.png"
+          alt="Boulangers souriants dans la boutique"
+          class="contact__bg"
+        />
+        <div class="contact__overlay"></div>
+        <div class="container contact__content">
+          <h2>Nous contacter</h2>
+          <div class="contact__infos">
+            <div class="glass">
+              <h3>Adresse mail</h3>
+              <a href="mailto:laboulangerieducoineu@gmail.com">laboulangerieducoineu@gmail.com</a>
             </div>
-            <div class="card">
-              <img src="/images/actualite2.jpg" alt="" />
-              <h3>Titre</h3>
-              <p>Texte</p>
-            </div>
-            <div class="card">
-              <img src="/images/actualite3.jpg" alt="" />
-              <h3>Titre</h3>
-              <p>Texte</p>
+            <div class="glass">
+              <h3>Téléphone</h3>
+              <a href="tel:+33328980377">03 2 8 98 03 77</a>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section id="contact" class="section fade-in">
-        <div class="container">
-          <h2>Contact</h2>
-          <form class="contact-form" action="#" method="post">
-            <label for="nom">Nom</label>
-            <input id="nom" name="nom" type="text" required />
-
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" required />
-
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-
-            <button class="btn" type="submit">Envoyer</button>
+          <form class="contact__form" action="#" method="post">
+            <label>
+              Nom
+              <input type="text" name="nom" placeholder="Votre nom" required />
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" placeholder="votre@email.com" required />
+            </label>
+            <label>
+              Message
+              <textarea name="message" rows="4" placeholder="Votre message" required></textarea>
+            </label>
+            <button type="submit" class="btn">Envoyer</button>
           </form>
         </div>
       </section>
     </main>
 
     <footer class="footer">
-      <p>Texte centré simple</p>
+      <p>La Boulangerie du Coin - Savoir-faire artisanal</p>
     </footer>
 
-    <script>
-      const elements = document.querySelectorAll(".fade-in");
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("visible");
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.15 }
-      );
-      elements.forEach((element) => observer.observe(element));
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
